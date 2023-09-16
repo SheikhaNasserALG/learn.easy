@@ -1,0 +1,27 @@
+
+
+body{
+    margin:auto;
+    height: 100%;
+    padding:10px;
+    background-color:#ebebeb;
+    font-size:14px;
+   
+}
+
+.pointer-con{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    background-color: #2196F3;
+    place-items: center;
+
+}
+
+.pointer-con div{
+    /* margin: 50px; */
+    display: block;
+}
+
+.move{
+    cursor: move;
+}

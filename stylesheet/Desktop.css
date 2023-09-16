@@ -1,0 +1,376 @@
+
+
+
+
+#parent{
+    position:fixed;
+    padding:0;
+    margin:0;
+
+    top:0;
+    left:0;
+
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+
+.dkt{
+    display: block;
+    background-image: url("../img/kcln.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.5;
+    background-color: darkcyan;
+    width: 100%;
+    height: 92%;
+
+}
+
+
+
+.tskbar{
+    display: block;
+    width: 100%;
+    height: 8%;
+}
+
+.tskbar-name{
+    display: none;
+    color: white;
+    /* position: absolute; */
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 500%;
+    color: aliceblue;
+    background-color: #232B2B;
+    padding: 20px; */
+}
+
+.tskbar:hover .tskbar-name{
+    display: block;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    font-size: 500%;
+    background-color: chocolate; 
+    height: 100px;   
+    padding: 5px 10px;
+}
+
+.tskbar:hover  .srch, .tskbar:hover .ME, .tskbar:hover .FL, .tskbar:hover .IN, .tskbar:hover .VO, .tskbar:hover .lan, 
+.tskbar:hover .DT, .tskbar:hover .em, .tskbar:hover .end{
+
+   background-color: chocolate;
+   
+}
+
+
+/* .tskbar:hover  .srch, .ME, .FL, .IN, .VO, .lan, .DT, .em, .end{
+
+    border-top:5px solid white;
+    border-bottom:5px solid white;
+   
+}
+
+.tskbar:hover  .srch{
+
+    border-left:5px solid white;
+   
+}
+
+.end{
+
+    padding: 20px;
+    border-left:5px solid white;
+    border-right:5px solid white;
+   
+} */
+
+.tskbar-c{
+    position:relative;
+    background-color: #232B2B;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 9fr 1fr 1fr 1fr 1fr 1fr;
+
+}
+
+.tskbar-c div{
+    width: 100%;
+    height: 100%;
+}
+
+
+.srch img, .FL img, .IN img{
+    height: 50%; 
+    width: 51%;
+    object-fit: contain;
+    margin: auto;
+}
+
+.start, .ME,  .FL, .IN, .srch, .VO, .DT, .lan{
+    display: flex;
+    justify-content: center;
+}
+
+.trash{
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+}
+
+.icon-name{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 500%;
+    /* display: none; */
+
+}
+
+
+.trash img{
+    height: 60%; 
+    width: 60%;
+    margin: auto;
+
+}
+
+.trash-name{
+    display: none;
+    font-size: 500%;
+
+}
+
+.trash:hover  .trash-name{
+    display: block;
+    font-size: 400%;
+    cursor: pointer;
+    width: max-content;
+    padding: 10px 5px;
+    background-color: #232B2B;
+
+
+}
+
+
+.start-name{
+    bottom: 70%;
+    position: absolute;
+    width: 50%;
+    left: 5%;
+    display: none;
+    font-size: 500%;
+
+}
+
+
+.start:hover .start-name{
+    bottom: 70%;
+    position: absolute;
+    width: 50%;
+    left: 2%;
+    display: block;
+    cursor: pointer;
+
+
+}
+
+.ME-name{
+    bottom: 70%;
+    position: absolute;
+    width: 50%;
+    left: 5%;
+    display: none;
+    font-size: 500%;
+
+}
+
+.ME:hover .ME-name{
+    bottom: 70%;
+    position: absolute;
+    width: 50%;
+    left: 10%;
+    display: block;
+    cursor: pointer;
+
+
+}
+
+.FL-name{
+    bottom: 70%;
+    position: absolute;
+    width: 50%;
+    left: 5%;
+    display: none;
+    font-size: 500%;
+
+}
+
+.FL:hover .FL-name{
+    bottom: 70%;
+    position: absolute;
+    width: 50%;
+    left: 15%;
+    display: block;
+    cursor: pointer;
+
+}
+
+.IN-name{
+    bottom: 70%;
+    position: absolute;
+    width: 50%;
+    left: 5%;
+    display: none;
+    font-size: 500%;
+
+}
+
+.IN:hover .IN-name{
+    bottom: 70%;
+    position: absolute;
+    width: 50%;
+    left: 70%;
+    display: block;
+    cursor: pointer;
+
+}
+
+.VO-name{
+    bottom: 70%;
+    position: absolute;
+    width: 50%;
+    left: 5%;
+    display: none;
+    font-size: 500%;
+
+}
+
+.VO:hover .VO-name{
+    bottom: 70%;
+    position: absolute;
+    width: 50%;
+    left: 58%;
+    display: block;
+    cursor: pointer;
+}
+
+.DT-name{
+    bottom: 70%;
+    position: absolute;
+    width: 50%;
+    left: 5%;
+    display: none;
+    font-size: 500%;
+
+}
+
+.DT:hover .DT-name{
+    bottom: 70%;
+    position: absolute;
+    width: 50%;
+    left: 73%;
+    display: block;
+    cursor: pointer;
+
+}
+
+
+
+
+.trash h2{
+    color: white;
+    font-family: sans-serif;
+    font-weight: 100; 
+    font-size: small;  
+    text-align: center;
+    text-shadow: 1px 1px 2px gainsboro;
+
+
+}
+
+.start img{
+    height: 55%; 
+    width: 51%;
+    object-fit: contain;
+    /* display: block; */
+    margin: auto;
+}
+
+.ME img{
+    height: 60%; 
+    width: 60%;
+    object-fit: contain;
+    margin: auto;
+}
+
+.FL img{
+    height: 65%; 
+    width: 60%;
+    object-fit: contain;
+    margin: auto;
+}
+
+.IN img{
+    height: 40%; 
+    width: 40%;
+    object-fit: contain;
+    margin: auto;
+}
+
+.VO img{
+    height: 40%; 
+    width: 40%;
+    object-fit: contain;
+    margin: auto;
+}
+
+.DT div{
+    color: white;
+    font-family: sans-serif;
+    font-weight: 100; 
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+
+
+}
+
+
+.DT {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.lan{
+    color: white;
+    font-family: sans-serif;
+    font-weight: 100; 
+    font-size: small;    
+}
+
+
+/* .start img.wide {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+} */
+

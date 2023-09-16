@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mouse Pointer</title>
+<link rel="stylesheet" href="./stylesheet/Mouse.css">
+</head>
+
+<body>
+
+    <div class="pointer-con">
+
+        
+        <div class="load">
+            <h2>انتظار</h2>
+            <div>
+                <button type="button" onclick="showLoad()" id="download">تنزيل</button>
+            
+                <img src="./img/load.gif" id="load" style="width:100px; height: 100px; display: none;" />
+
+                
+            </div>
+            
+        </div>
+
+        <div class="move">
+            <h2>تحريك</h2>
+            <div>
+                <div>
+                    <img src="http://placehold.it/100x100" id="cursorImage" ondragstart="return false;"/>
+                </div>
+            </div>
+            
+        </div>
+        
+
+        <div class="go">
+            <h2>انتقال إلى</h2>
+            <div>
+                <a href="/Move.html">أضغط هنا للذهاب لصفحة جديدة</a>     
+            </div>
+
+        </div>
+
+
+        <div class="text">
+            <h2>كتابة</h2>
+            <div>
+                <form >
+                    <p>أسمي</p>
+                    <input type="text" id="html" name="fav_language" placeholder="اسمي هو">
+                  
+                    <br>  
+
+                  </form>
+                
+            </div>
+            
+        </div>
+
+
+        <div class="choose">
+            <h2>اختيار</h2>
+            <div>
+
+                <form >
+                    <p>فاكهتي المفضلة</p>
+                    <input type="radio" id="html" name="fav_language" value="HTML">
+                    <label for="html">موز</label><br>
+                    <input type="radio" id="css" name="fav_language" value="CSS">
+                    <label for="css">تفاح</label><br>
+                    <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+                    <label for="javascript">برتقال</label>
+                  
+                    <br>  
+
+                  </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        let gMouseDownX = 0;
+        let gMouseDownY = 0;
+        let gMouseDownOffsetX = 0;
+        let gMouseDownOffsetY = 0;
+
+        function addListeners() {
+            document.getElementById('cursorImage').addEventListener('mousedown', mouseDown, false);
+            window.addEventListener('mouseup', mouseUp, false);
+        }
+
+        function mouseUp() {
+            window.removeEventListener('mousemove', divMove, true);
+        }
+
+        function mouseDown(e) {
+            gMouseDownX = e.clientX;
+            gMouseDownY = e.clientY;
+
+            var div = document.getElementById('cursorImage');
+
+            //The following block gets the X offset (the difference between where it starts and where it was clicked)
+            let leftPart = "";
+            if(!div.style.left)
+                leftPart+="0px";    //In case this was not defined as 0px explicitly.
+            else
+                leftPart = div.style.left;
+            let leftPos = leftPart.indexOf("px");
+            let leftNumString = leftPart.slice(0, leftPos); // Get the X value of the object.
+            gMouseDownOffsetX = gMouseDownX - parseInt(leftNumString,10);
+
+            //The following block gets the Y offset (the difference between where it starts and where it was clicked)
+            let topPart = "";
+            if(!div.style.top)
+                topPart+="0px";     //In case this was not defined as 0px explicitly.
+            else
+                topPart = div.style.top;
+            let topPos = topPart.indexOf("px");
+            let topNumString = topPart.slice(0, topPos);    // Get the Y value of the object.
+            gMouseDownOffsetY = gMouseDownY - parseInt(topNumString,10);
+
+            window.addEventListener('mousemove', divMove, true);
+        }
+
+        function divMove(e){
+            var div = document.getElementById('cursorImage');
+            div.style.position = 'absolute';
+            let topAmount = e.clientY - gMouseDownOffsetY;
+            div.style.top = topAmount + 'px';
+            let leftAmount = e.clientX - gMouseDownOffsetX;
+            div.style.left = leftAmount + 'px';
+        }
+
+        function showLoad(){
+            document.getElementById("download").style.display = "none";
+            document.body.style.cursor = 'none';
+            document.getElementById("load").style.display = "block";
+            window.setTimeout("closeLoad();", 3000);
+
+        }
+
+        function closeLoad(){
+            document.body.style.cursor = 'default';
+            document.getElementById("load").style.display = "none";
+            document.getElementById("download").style.display = "block";
+        }
+
+       
+
+
+        addListeners();
+
+
+    </script>
+</body>
+
+</html>
+

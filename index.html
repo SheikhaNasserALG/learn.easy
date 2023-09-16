@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>سطح المكتب</title>
+<link rel="stylesheet" href="./stylesheet/Desktop.css">
+</head>
+
+<body>
+
+    <div id="parent" >
+
+        <div class="dkt">
+            <div class="trash">
+                <img src="./img/trash2.png" />
+                <h2>Recycle Bin</h2>
+                <h2 class="trash-name" >سلة المحذوفات</h2>
+
+            </div>
+
+            
+        </div>
+
+
+        <div class="tskbar" id="tskbar">
+            <div class="tskbar-c" id="tskbar-c">
+                <div class="start">
+                    <h2 class="start-name" >زر البدء</h2>
+                    <img src="./img/start.png" />
+                </div>
+                <div class="srch">
+                </div>
+                <div class="ME">
+                    <h2 class="ME-name" >Microsoft Edge</h2>
+                    <img src="./img/ME.png" />
+                </div>
+                <div class="FL">
+                    <h2 class="FL-name" >مستكشف الملفات</h2>
+                    <img src="./img/FLEX.png" />
+                </div>
+                <div class="em">
+                    
+                </div>
+                <div class="IN">
+                    <h2 class="IN-name" >اتصال بالإنترنت</h2>
+                    <img src="./img/Inte.png" />
+                </div>
+                <div class="VO">
+                    <h2 class="VO-name" >التحكم بمستوى الصوت</h2>
+                    <img src="./img/vol.png" />
+                </div>
+                <div class="lan">
+                    <h2>ENG</h2>
+                </div>
+                <div class="DT">
+                    <h2 class="DT-name" >  التاريخ / الوقت</h2>
+                    <div id="time">
+
+                    </div>
+                    <div id ="date">
+                        
+                    </div>
+                </div>
+                <div class="end">
+                    
+                </div>
+            </div>
+            <h2 class="tskbar-name" >شريط المهام</h2>
+
+
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        let time = new Date().toLocaleTimeString();
+        let curday = function(sp){
+        today = new Date();
+        let dd = today.getDate();
+        let mm = today.getMonth()+1; //As January is 0.
+        let yyyy = today.getFullYear();
+
+        if(dd<10) dd='0'+dd;
+        if(mm<10) mm='0'+mm;
+        return (mm+sp+dd+sp+yyyy);
+        };
+        console.log(curday('/'));
+        console.log(curday('-'));
+
+        function formatAMPM(date) {
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var ampm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12;
+        hours = hours ? hours : 12; // the hour '0' should be '12'
+        minutes = minutes < 10 ? '0'+minutes : minutes;
+        var strTime = hours + ':' + minutes + ' ' + ampm;
+        return strTime;
+        }
+
+        document.getElementById("time").innerText  = formatAMPM(new Date);
+        document.getElementById("date").innerText  = curday('/');
+
+    </script>
+</body>
+
+</html>
+
